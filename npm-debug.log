@@ -1,0 +1,94 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'update', '-g', 'ionic' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.32
+4 verbose request where is /ionic
+5 verbose request registry https://registry.npmjs.org/
+6 verbose request id fb69d1225edc2f4d
+7 verbose url raw /ionic
+8 verbose url resolving [ 'https://registry.npmjs.org/', './ionic' ]
+9 verbose url resolved https://registry.npmjs.org/ionic
+10 verbose request where is https://registry.npmjs.org/ionic
+11 info trying registry request attempt 1 at 13:18:15
+12 verbose etag "8HFNBBSET63MBEO8XXWPA114H"
+13 http GET https://registry.npmjs.org/ionic
+14 http 304 https://registry.npmjs.org/ionic
+15 silly registry.get cb [ 304,
+15 silly registry.get   { date: 'Thu, 30 Oct 2014 05:18:15 GMT',
+15 silly registry.get     server: 'Apache',
+15 silly registry.get     via: '1.1 varnish',
+15 silly registry.get     'last-modified': 'Thu, 30 Oct 2014 05:18:16 GMT',
+15 silly registry.get     'cache-control': 'max-age=60',
+15 silly registry.get     etag: '"8HFNBBSET63MBEO8XXWPA114H"',
+15 silly registry.get     age: '0',
+15 silly registry.get     'x-served-by': 'cache-sn86-SIN',
+15 silly registry.get     'x-cache': 'MISS',
+15 silly registry.get     'x-cache-hits': '0',
+15 silly registry.get     'x-timer': 'S1414646295.907254,VS0,VE245',
+15 silly registry.get     vary: 'Accept',
+15 silly registry.get     'content-length': '0',
+15 silly registry.get     'keep-alive': 'timeout=10, max=50',
+15 silly registry.get     connection: 'Keep-Alive' } ]
+16 verbose etag https://registry.npmjs.org/ionic from cache
+17 info outdated updating [ [ '/usr/local/lib', 'ionic', '1.2.7', '1.2.8', '1.2.8', 'latest' ] ]
+18 verbose install where,what [ '/usr/local/lib', [ 'ionic@1.2.8' ] ]
+19 verbose cache add [ 'ionic@1.2.8', null ]
+20 verbose cache add name=undefined spec="ionic@1.2.8" args=["ionic@1.2.8",null]
+21 verbose parsed url { protocol: null,
+21 verbose parsed url   slashes: null,
+21 verbose parsed url   auth: null,
+21 verbose parsed url   host: null,
+21 verbose parsed url   port: null,
+21 verbose parsed url   hostname: null,
+21 verbose parsed url   hash: null,
+21 verbose parsed url   search: null,
+21 verbose parsed url   query: null,
+21 verbose parsed url   pathname: 'ionic@1.2.8',
+21 verbose parsed url   path: 'ionic@1.2.8',
+21 verbose parsed url   href: 'ionic@1.2.8' }
+22 verbose cache add name="ionic" spec="1.2.8" args=["ionic","1.2.8"]
+23 verbose parsed url { protocol: null,
+23 verbose parsed url   slashes: null,
+23 verbose parsed url   auth: null,
+23 verbose parsed url   host: null,
+23 verbose parsed url   port: null,
+23 verbose parsed url   hostname: null,
+23 verbose parsed url   hash: null,
+23 verbose parsed url   search: null,
+23 verbose parsed url   query: null,
+23 verbose parsed url   pathname: '1.2.8',
+23 verbose parsed url   path: '1.2.8',
+23 verbose parsed url   href: '1.2.8' }
+24 verbose addNamed [ 'ionic', '1.2.8' ]
+25 verbose addNamed [ '1.2.8', '1.2.8' ]
+26 silly lockFile 74ce95ae-ionic-1-2-8 ionic@1.2.8
+27 verbose lock ionic@1.2.8 /Users/Timo/.npm/74ce95ae-ionic-1-2-8.lock
+28 verbose registry.get https://registry.npmjs.org/ionic not expired, no request
+29 silly lockFile 65c480ba--npmjs-org-ionic-ionic-1-2-8-tgz https://registry.npmjs.org/ionic/-/ionic-1.2.8.tgz
+30 verbose lock https://registry.npmjs.org/ionic/-/ionic-1.2.8.tgz /Users/Timo/.npm/65c480ba--npmjs-org-ionic-ionic-1-2-8-tgz.lock
+31 verbose addRemoteTarball [ 'https://registry.npmjs.org/ionic/-/ionic-1.2.8.tgz',
+31 verbose addRemoteTarball   'b7087e0ba85f358934fa6546a351e966afa771a3' ]
+32 info retry fetch attempt 1 at 13:18:16
+33 verbose fetch to= /var/folders/5j/q59kg_kd4014_rkhblfzwdxh0000gn/T/npm-1560-l0qAW-Vq/registry.npmjs.org/ionic/-/ionic-1.2.8.tgz
+34 http GET https://registry.npmjs.org/ionic/-/ionic-1.2.8.tgz
+35 http 200 https://registry.npmjs.org/ionic/-/ionic-1.2.8.tgz
+36 silly lockFile 65c480ba--npmjs-org-ionic-ionic-1-2-8-tgz https://registry.npmjs.org/ionic/-/ionic-1.2.8.tgz
+37 silly lockFile 65c480ba--npmjs-org-ionic-ionic-1-2-8-tgz https://registry.npmjs.org/ionic/-/ionic-1.2.8.tgz
+38 silly lockFile 74ce95ae-ionic-1-2-8 ionic@1.2.8
+39 silly lockFile 74ce95ae-ionic-1-2-8 ionic@1.2.8
+40 error Error: EACCES, mkdir '/Users/Timo/.npm/ionic/1.2.8'
+40 error  { [Error: EACCES, mkdir '/Users/Timo/.npm/ionic/1.2.8']
+40 error   errno: 3,
+40 error   code: 'EACCES',
+40 error   path: '/Users/Timo/.npm/ionic/1.2.8' }
+41 error Please try running this command again as root/Administrator.
+42 error System Darwin 14.0.0
+43 error command "node" "/usr/local/bin/npm" "update" "-g" "ionic"
+44 error cwd /Users/Timo/Sites/dealangular
+45 error node -v v0.10.32
+46 error npm -v 1.4.28
+47 error path /Users/Timo/.npm/ionic/1.2.8
+48 error code EACCES
+49 error errno 3
+50 error stack Error: EACCES, mkdir '/Users/Timo/.npm/ionic/1.2.8'
+51 verbose exit [ 3, true ]

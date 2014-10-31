@@ -1,0 +1,108 @@
+<ion-view title="详细信息">
+ <!--  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons> -->
+<!--   <ion-nav-buttons side="right">
+    <button class="button icon-right button-clear button-white ion-ios7-compose-outline" ng-click="gotoPost()">
+    </button> -->
+  </ion-nav-buttons>
+  <ion-content class="has-header">
+    <article class="single">
+      <ion-slide-box class="single-slider" on-slide-changed="slideHasChanged($index)">
+        <ion-slide ng-repeat="pic in deal.pictures">
+          <img ng-src="{{pic.pictureUrlDetailScaled}}">
+        </ion-slide>
+      </ion-slide-box>
+
+      <section class="item item-detail">
+        <div class="tags-special">
+          <span class="tag tag-new" ng-show="deal.newFlag">最新</span>
+          <span class="tag tag-hot" ng-show="deal.popularFlag">人气</span>
+          <span class="tag tag-love" ng-show="deal.likeFlag">爱爆</span>
+        </div>
+        <h2 class="short-desc">{{deal.title}}</h2>
+        
+        <div class="brand-tag">
+          <a>#Chanel</a>
+          <a>#联想</a>
+          <a>#手机</a>
+        </div>
+        
+        <div class="company" ng-class="deal.vendorColor">{{deal.vendor}}</div>
+        <div class="prices">
+          <span class="price-original" ng-show="deal.textInGray">{{deal.textInGray}}</span>
+          <span class="price-discount" ng-show="deal.textInRed">{{deal.textInRed}}</span>
+        </div>
+      </section>
+
+      <section class="post-original">
+        <div class="item item-avatar op">
+          <img ng-src="{{deal.authorPictureScaled}}">
+
+          <h2>发布者</h2>
+          <p>{{deal.authorName}}</p>
+        </div>
+
+        <div class="item" ng-show="deal.description">
+          <blockquote class="bubble">{{deal.description}}
+          </blockquote>
+        </div>
+      </section>
+
+  <section class="item no-top-padding no-border">
+ <div class="button-bar">        
+            <button class="button button-small button-outline button-royal"> 分享
+            </button>
+            <button class="button button-small button-outline button-royal" ng-click="gotoComment(deal.id)"> 评论
+            </button>
+          </div>
+</section>
+
+      <div class="item item-divider">
+        <p class="stat">发布于{{deal.postTimeDisplay}} | {{deal.readCount}}次访问
+          <span class="float-right">{{deal.commentCount}}个评论</span> </p>
+      </div>
+
+      <section class="list comments">
+        <!-- Start Comment Section -->
+
+        <article class="single-comment" ng-repeat="comment in comments">
+          <div class="item item-avatar">
+            <img ng-src="{{comment.authorPictureScaled}}">
+            <button class="button button-small button-outline button-royal button-comment" ng-click="gotoComment(deal.id, comment.id)">
+              回复
+            </button>
+            <h2>{{comment.authorName}}</h2>
+            <span class="date-comment">{{comment.commentTimeDisplay}}</span>
+          </div>
+          <div class="item text-comment">
+            <h2 class="title-comment" ng-show="comment.title">{{comment.title}}</h2>
+            <div class="card requote" ng-show="comment.repliedComment">
+              <div class="item item-text-wrap">
+                <h3>摘引{{comment.repliedAuthorName}}:</h3>
+                <!-- <p ng-show="comment.repliedTitle">{{comment.repliedTitle}}</p> -->
+                <p ng-show="comment.repliedComment">{{comment.repliedComment}}</p>
+              </div>
+            </div>
+              <p ng-show="comment.comment">{{comment.comment}}</p>
+            </div>
+        </article>
+        <ion-infinite-scroll ng-if="canLoad()" on-infinite="load()" distance="1%">
+        </ion-infinite-scroll>
+
+      </section>
+      <!-- End Comment Section -->
+
+    </article>
+    <div class="bar bar-footer bar-stable">
+      <button class="button button-outline button-balanced" ng-click="clickUp()"><i class="icon ion-thumbsup"></i> {{deal.upCount}}
+      </button>&nbsp;
+      <button class="button button-outline button-assertive" ng-click="clickDown()"><i class="icon ion-thumbsdown"></i> {{deal.downCount}}
+      </button>
+      <button class="button button-positive" ng-click="gotoBrowser(deal.uri)" ng-show="deal.uri">
+        打开链接
+      </button>
+    </div>
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,35 @@
+<ion-view title="发表评论">
+  <ion-content class="has-header">
+    <article class="list list-thumb">
+      <a class="item item-thumbnail-left" ng-click="gotoDetail(ionicState.params.postId)">
+        <img ng-src="{{deal.pictureFirstListScaled}}">
+        <h2 class="short-desc">{{deal.title}}</h2>
+        <p class="stat">发布于{{deal.postTimeDisplay}} | {{deal.readCount}}次访问 | {{deal.commentCount}}个评论</p>
+        <span class="company" ng-class="deal.vendorColor">{{deal.vendor}}</span>
+        <div class="prices">
+          <span class="price-original" ng-show="deal.textInGray">{{deal.textInGray}}</span>
+          <span class="price-discount" ng-show="deal.textInRed">{{deal.textInRed}}</span>
+        </div>
+      </a>
+    </article>
+
+    
+
+    <form name="commentForm" novalidate>
+      <div class="list">
+        <label class="item item-input">
+          <input type="text" placeholder="主题" ng-model="commentData.title" required>
+        </label>
+
+        <label class="item item-input">
+          <textarea rows=10 placeholder="具体情况" ng-model="commentData.comment"></textarea>
+        </label>
+
+        <div class="padding">
+          <button class="button button-block button-positive" ng-click="commentForm.$valid && postComment()" ng-disabled="! commentForm.$valid">评论</button>
+        </div>
+
+      </div>
+    </form>
+  </ion-content>
+</ion-view>

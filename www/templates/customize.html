@@ -1,0 +1,21 @@
+<ion-view title="定制界面">
+  <ion-content class="has-header">
+
+    <form name="customizeForm" novalidate>
+      <div class="list">
+        <label class="item item-input">
+          <input type="text" placeholder="主题" ng-model="commentData.title" required>
+        </label>
+
+        <label class="item item-input">
+          <textarea rows=10 placeholder="具体情况" ng-model="commentData.comment"></textarea>
+        </label>
+
+        <div class="padding">
+          <button class="button button-block button-positive" ng-click="commentForm.$valid && postComment()" ng-disabled="! commentForm.$valid">评论</button>
+        </div>
+
+      </div>
+    </form>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,27 @@
+<ion-view title="注册">
+  <ion-nav-buttons side="left">
+    <button class="button icon-right button-clear button-white " ng-click="gotoList()"><i class="icon ion-ios7-arrow-back"></i>
+    </button>
+  </ion-nav-buttons>
+  <ion-content class="has-header" scroll="false">
+    <form name="registerForm" novalidate>
+      <div class="list acct-register">
+        <label class="item item-icon-left item-input">
+          <i class="icon ion-person"></i>
+          <input type="text" placeholder="输入昵称" required ng-pattern="/^.{3,}$/" ng-model="registerData.username">
+        </label>
+        <label class="item item-icon-left item-input">
+          <i class="icon ion-ios7-locked"></i>
+          <input type="password" placeholder="密码" required ng-model="registerData.password" ng-pattern="/^.{6,}$/">
+        </label>
+        <label class="item item-icon-left item-input">
+          <i class="icon "></i>
+          <input type="password" placeholder="再次输入" required ng-model="registerData.passwordConfirm" ng-pattern="/^.{6,}$/">
+        </label>
+        <div class="padding">
+          <button class="button button-block button-positive" ng-click="registerForm.$valid && doRegister()" ng-disabled="! registerForm.$valid || registerData.password != registerData.passwordConfirm">注册</button>
+        </div>
+      </div>
+    </form>
+  </ion-content>
+</ion-view>

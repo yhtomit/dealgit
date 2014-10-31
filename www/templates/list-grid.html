@@ -1,0 +1,44 @@
+<ion-view title="屌丝网">
+
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <button class="button icon-right button-clear button-white ion-ios7-compose-outline" ng-click="gotoPost()">
+    </button>
+  </ion-nav-buttons>
+  <ion-content class="has-header">
+    <ion-slide-box class="home-slider" on-slide-changed="slideHasChanged($index)">
+      <ion-slide>
+        <img src="img/slider/slider-1.jpg">
+      </ion-slide>
+      <ion-slide>
+        <img src="img/slider/slider-2.jpg">
+      </ion-slide>
+      <ion-slide>
+        <img src="img/slider/slider-3.jpg">
+      </ion-slide>
+    </ion-slide-box>
+    <div masonry class="masonry-container" data-masonry-options="{'transitionDuration' : 0}">
+      <article class="card masonry-brick" ng-repeat="deal in deals">
+        <a class="item" ng-click="clickDetail(deal.id)">
+          <img ng-src="{{deal.pictureFirstDetailScaled}}">
+          <div class="tags-special">
+            <span class="tag tag-new" ng-show="deal.newFlag">最新</span>
+            <span class="tag tag-hot" ng-show="deal.popularFlag">人气</span>
+            <span class="tag tag-love" ng-show="deal.likeFlag">爱爆</span>
+          </div>
+          <h2 class="short-desc">{{deal.title}}</h2>
+          <p class="stat">发布于{{deal.postTimeDisplay}} | {{deal.readCount}}次访问 | {{deal.commentCount}}个评论</p>
+          <span class="company" ng-class="deal.vendorColor">{{deal.vendor}}</span>
+          <div class="prices">
+            <span class="price-original" ng-show="deal.textInGray">{{deal.textInGray}}</span>
+            <span class="price-discount" ng-show="deal.textInRed">{{deal.textInRed}}</span>
+          </div>
+        </a>
+      </article>
+      <ion-infinite-scroll ng-if="canLoad()" on-infinite="load()" distance="1%">
+      </ion-infinite-scroll>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,59 @@
+<ion-side-menus>
+
+  <ion-pane ion-side-menu-content>
+    <ion-nav-bar class="bar-royal nav-title-slide-ios7">
+      <ion-nav-back-button class="button-clear"><i class="icon ion-ios7-arrow-back"></i></ion-nav-back-button>
+    </ion-nav-bar>
+    <!-- Start Sub-Header -->
+    <ion-header-bar class="bar-subheader bar-stable" ng-show="ionicState.current.name=='app.list'">
+        <div class="button-bar ">
+          <a class="button button-outline button-royal">最新</a>
+          <a class="button button-outline button-royal activated">人气</a>
+          <a class="button button-outline button-royal">爱爆</a>
+        </div>
+    </ion-header-bar>
+    <ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
+  </ion-pane>
+
+  <ion-side-menu side="left">
+   <!--  <header class="bar bar-header bar-dark">
+      <h1 class="title">菜单</h1>
+    </header> -->
+  <ion-content>
+
+</ion-content>
+
+    <ion-content class="has-header" ng-hide="LOGIN_STATUS">
+      <ion-list>
+        <ion-item nav-clear menu-close ng-click="showLogin()">
+          登陆
+        </ion-item>
+      </ion-list>
+    </ion-content>
+    <ion-content class="has-header" ng-show="LOGIN_STATUS">
+      <ion-list>
+        <ion-item class="item item-avatar">
+          <img src="img/winston.jpg">
+          <h2>小米</h2>
+          <p>普通会员</p>
+        </a>
+      </ion-item>
+        <!-- <ion-item nav-clear menu-close ng-click="login()">
+          个人资料
+        </ion-item> -->
+        <ion-item nav-clear menu-close ng-click="customize()">
+          Switch to List(or Grid) mode 
+        </ion-item>
+        <!-- <ion-item nav-clear menu-close href="#/app/search">
+          我的许愿
+        </ion-item>
+        <ion-item nav-clear menu-close href="#/app/browse">
+          奖励计划
+        </ion-item> -->
+        <ion-item nav-clear menu-close ng-click="logout()">
+          退出
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

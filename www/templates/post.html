@@ -1,0 +1,76 @@
+<ion-view title="我要晒">
+<!--   <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons> -->
+  <ion-content class="has-header">
+  <form name="postForm" novalidate>
+    <div class="list post-form">
+      <div class="padding-bottom">
+          <!-- <label class="item item-input item-select">
+          <div class="input-label">
+            类别
+          </div>
+          <select>
+            <option>电子</option>
+            <option>衣服</option>
+            <option>美容</option>
+            <option>日用品</option>
+            <option>其他</option>
+          </select>
+        </label> -->
+
+        <label class="item item-input">
+          <textarea rows=5 placeholder="标题" ng-model="deal.title" required></textarea>
+        </label>
+      </div>
+
+      <label class="item item-input item-select">
+        <div class="input-label">
+          来源
+        </div>
+        <select ng-model="deal.vendor">
+          <option>淘宝</option>
+          <option>京东</option>
+          <option>天猫</option>
+          <option>其他</option>
+        </select>
+      </label>
+
+      <label class="item item-input">
+        <textarea rows=10 placeholder="具体情况" ng-model="deal.description"></textarea>
+      </label>
+
+      <label class="item item-input">
+        <input type="number" placeholder="原价" ng-model="deal.regularPrice" ng-pattern="/^[0-9]*\.?[0-9]*$/">
+      </label>
+
+      <label class="item item-input">
+        <input type="number" placeholder="折扣价" ng-model="deal.discountedPrice" ng-pattern="/^[0-9]*\.?[0-9]*$/">
+      </label>
+
+      <label class="item item-input item-icon-right">
+        <input type="text" placeholder="网址" ng-click="gotoBrowser(deal.uri)" ng-model="deal.uri">
+        <i class="icon ion-ios7-arrow-right"></i>
+      </label>
+
+        <!-- <a class="item item-icon-left item-icon-right" href="#">
+        <i class="icon ion-ios7-search"></i> 网址
+        <i class="icon ion-ios7-arrow-right"></i>
+      </a> -->
+
+      <div class="padding">
+        <button class="button button-block button-stable" ng-file-select="onDealPictureUpload($files)" accept="image/*" multiple>上传图片</button>
+        <span class="notice">请遵守本软件规定，不要上传不符合法律规定的内容。</span>
+      </div>
+
+
+      <div class="padding">
+        <button class="button button-block button-positive" ng-click="postForm.$valid && postDeal()" ng-disabled="! postForm.$valid || !pictureUrls || !pictureUrls.length">
+          发布</button>
+        </div>
+
+      </div>
+    </form>
+
+  </ion-content>
+</ion-view>
