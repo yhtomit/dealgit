@@ -1,4 +1,4 @@
-var app = angular.module('starter.controllers', ['ionic', 'angularFileUpload', 'starter.services', 'wu.masonry']);
+var app = angular.module('starter.controllers', ['ionic', 'angularFileUpload', 'starter.services', 'wu.masonry', 'ngTagsInput']);
 
 app.controller('AppCtrl', ["$rootScope", "$scope", "$ionicModal", "$timeout", "$state", "opService",
     function($rootScope, $scope, $ionicModal, $timeout, $state, opService) {
@@ -159,13 +159,18 @@ app.controller('ProfileCtrl', ["$rootScope", "$scope", "$ionicModal", "$timeout"
             });
 
         $scope.onProfilePictureUpload = function(files) {
-            if (files) {
+            if (files) 
+            {
+                console.log("fd");
+                $scope.uploadfile = true;
                 var file = files[0];
                 $upload.upload({
                     url: opService.CONSTS.FILE_UPLOAD_SERVICE,
                     file: file,
-                    progress: function(e) {}
+                    progress: function(e) {
+                    }
                 }).then(function(data, status, headers, config) {
+                    $scope.uploadfile = false;
                     if (data.data.uploaded) {
                         for (var key in data.data.uploaded) {
                             $scope.profilePictureOriginal = data.data.uploaded[key];
