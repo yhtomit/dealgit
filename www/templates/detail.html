@@ -1,12 +1,6 @@
 <ion-view title="详细信息">
- <!--  <ion-nav-buttons side="left">
-    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
-  </ion-nav-buttons> -->
-<!--   <ion-nav-buttons side="right">
-    <button class="button icon-right button-clear button-white ion-ios7-compose-outline" ng-click="gotoPost()">
-    </button> -->
-  </ion-nav-buttons>
-  <ion-content class="has-header">
+  <ion-content>
+    <div class="has-header">
     <article class="single">
       <ion-slide-box class="single-slider" on-slide-changed="slideHasChanged($index)">
         <ion-slide ng-repeat="pic in deal.pictures">
@@ -94,7 +88,9 @@
       <!-- End Comment Section -->
 
     </article>
-    <div class="bar bar-footer bar-stable">
+    </div>
+  </ion-content>
+  <div class="bar bar-footer bar-stable">
       <button class="button button-outline button-balanced" ng-click="clickUp()"><i class="icon ion-thumbsup"></i> {{deal.upCount}}
       </button>&nbsp;
       <button class="button button-outline button-assertive" ng-click="clickDown()"><i class="icon ion-thumbsdown"></i> {{deal.downCount}}
@@ -103,6 +99,4 @@
         打开链接
       </button>
     </div>
-
-  </ion-content>
 </ion-view>

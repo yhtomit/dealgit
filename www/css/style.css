@@ -551,6 +551,9 @@ blockquote {
 		animation: pace-stripe-animation 500ms linear infinite;
 }
 
+.scroll-content {top:44px;}
+.comments {padding-bottom:44px;}
+
 @-webkit-keyframes pace-stripe-animation {
 		0% {
 				-webkit-transform: none;
